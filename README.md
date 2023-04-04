@@ -12,9 +12,17 @@ pip install django-rest-envelope
 
 ## Usage
 
+In your viewset views, you can use the `ListEnvelopeMixin` along with another mixin that defines the `list()` method:
+
 ```python
-$ TODO
+class MyViewSet(ListEnvelopeMixin, ReadOnlyModelViewSet):
+    envelope: "my_envelope"
 ```
+
+In your ViewSet class that uses the mixin you have to define the `envelope` attribute.
+
+Additionally, you can overwrite the `get_envelope()` method to tweak the behaviour of
+which envelope use in different situations.
 
 ## Licence
 
