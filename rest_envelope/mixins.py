@@ -13,5 +13,5 @@ class ListEnvelopeMixin:
         return self.envelope
 
     def list(self, request: Request, *args, **kwargs) -> Response:
-        response = super().list(request, *args, **kwargs)
+        response = super().list(request, *args, **kwargs)  # type: ignore
         return Response({self.get_envelope(): response.data})
