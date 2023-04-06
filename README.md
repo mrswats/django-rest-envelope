@@ -24,6 +24,28 @@ In your ViewSet class that uses the mixin you have to define the `envelope` attr
 Additionally, you can overwrite the `get_envelope()` method to tweak the behaviour of
 which envelope use in different situations.
 
+### Example
+
+By default, django REST ViewSets return a list:
+
+```json
+[
+  { "id": 1, "foo": "bar" },
+  { "id": 2, "foo": "baz" }
+]
+```
+
+Once the mixin is applied to that same ViewSet, you get, instead, the following response:
+
+```json
+{
+  "my_envelope": [
+    { "id": 1, "foo": "bar" },
+    { "id": 2, "foo": "baz" }
+  ]
+}
+```
+
 ## Licence
 
 This package is distributed under [MIT Licence](./LICENCE).
