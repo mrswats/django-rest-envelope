@@ -1,9 +1,11 @@
+from typing import Optional
+
 from rest_framework.request import Request
 from rest_framework.response import Response
 
 
 class ListEnvelopeMixin:
-    envelope: str | None = None
+    envelope: Optional[str] = None
 
     def get_envelope(self):
         assert self.envelope is not None, (
