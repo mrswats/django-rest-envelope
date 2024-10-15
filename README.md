@@ -16,7 +16,7 @@ In your viewset views, you can use the `ListEnvelopeMixin` along with another mi
 
 ```python
 class MyViewSet(ListEnvelopeMixin, ReadOnlyModelViewSet):
-    envelope: "my_envelope"
+    envelope = "my_envelope"
 ```
 
 In your ViewSet class that uses the mixin you have to define the `envelope` attribute.
