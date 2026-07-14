@@ -23,7 +23,7 @@ repos:
       - id: pyupgrade
         args: ["--py311-plus"]
   - repo: https://github.com/adamchainz/django-upgrade
-    rev: "1.30.0"
+    rev: "1.31.1"
     hooks:
       - id: django-upgrade
         args:
@@ -34,11 +34,11 @@ repos:
     hooks:
     -   id: autopep8
   - repo: https://github.com/asottile/reorder-python-imports
-    rev: v3.16.0
+    rev: v3.17.0
     hooks:
       - id: reorder-python-imports
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v2.0.0
+    rev: v2.3.0
     hooks:
       - id: mypy
         language_version: "3.11"
