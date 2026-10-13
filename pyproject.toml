@@ -1,14 +1,15 @@
 [project]
 name = "django-rest-envelope"
-version = "1.1.0"
+version = "1.2.0"
 description = "A mixin for Django REST package List Views to return an object instead of a list."
 readme = "README.md"
 requires-python = ">=3.11"
-license = { file = "LICENSE" }
 authors = [
-    {name = "Ferran Jovell", email = "ferran.jovell+gh@gmail.com"}
+    { name = "Ferran Jovell", email = "ferran.jovell+gh@gmail.com" },
 ]
-keywords = ["django"]
+keywords = [
+    "django",
+]
 classifiers = [
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
@@ -20,12 +21,15 @@ classifiers = [
     "Operating System :: OS Independent",
     "Topic :: Software Development :: Libraries",
     "Environment :: Web Environment",
-    "Framework :: Django"
+    "Framework :: Django",
 ]
- dependencies = [
+dependencies = [
     "Django>=4.2",
     "djangorestframework>=3.11.0",
- ]
+]
+
+[project.license]
+file = "LICENSE"
 
 [project.urls]
 homepage = "https://github.com/mrswats/django-rest-envelope"
@@ -38,33 +42,24 @@ test = [
 ]
 
 [build-system]
-requires = ["setuptools>=75.1"]
+requires = [
+    "setuptools>=75.1",
+]
 build-backend = "setuptools.build_meta"
 
 [tool.setuptools]
-packages = ["rest_envelope"]
+packages = [
+    "rest_envelope",
+]
 
 [tool.pytest.ini_options]
 DJANGO_SETTINGS_MODULE = "tests.settings"
 
 [tool.black]
 line-length = 99
-target_version = ["py39"]
+target_version = [
+    "py39",
+]
 skip-string-normalization = false
 include = "\\.pyi?$"
-exclude = """
-(
-  /(
-      \\.eggs         # exclude a few common directories in the
-    | \\.git          # root of the project
-    | \\.hg
-    | \\.mypy_cache
-    | \\.tox
-    | \\.venv
-    | _build
-    | buck-out
-    | build
-    | dist
-  )/
-)
-"""
+exclude = "(\n  /(\n      \\.eggs         # exclude a few common directories in the\n    | \\.git          # root of the project\n    | \\.hg\n    | \\.mypy_cache\n    | \\.tox\n    | \\.venv\n    | _build\n    | buck-out\n    | build\n    | dist\n  )/\n)\n"
